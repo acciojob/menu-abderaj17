@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import CompA from "./CompA";
+import React, { useState } from 'react'
+import CompA from './CompA';
+
 
 const data = [
     {
@@ -75,55 +76,81 @@ const data = [
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
   ];
+  
 
-  const App =()=>{
+
+const App = () => {
+
     const[items, setItems] = useState(data)
-    const[filteredItems, setFilteredItems] =useState(data)
+    const[filteredItems, setFilteredItems] = useState(data)
 
-    return (
-        <div id="main">
-            <h1>Our Menu</h1>
 
-            <div>
-                <button onClick={()=>{
-                    const cat ="all"
+    
 
-                    setFilteredItems(data)
-                }}>All</button>
-                <button id="filter-btn-1" onClick={()=>{
-                    const cat ="breakfast"
+  return (
+    <div id='main'>
+        
+        <h1>Our Menu</h1>
 
-                    const nArr = items.filter((item)=>{
-                        return item.category== cat
-                    })
-                    setFilteredItems(nArr)
+        <div>
+            <button onClick={() => {
+                const cat = "all"
 
-                }}>Breakfast</button>
-                <button id="filter-btn-2" onClick={()=>{
-                    const cat = "lunch"
+                // const nArr = items.filter((item) => {
+                //     return item.category == cat
+                // })
 
-                    const nArr = items.filter((item)=>{
-                        return item.category==cat
-                    })
-                    setFilteredItems(nArr)
-                }}>Lunch</button>
+                setFilteredItems(data)
+                // console.log(nArr)
 
-                <button id="filter-btn-3" onClick={()=>{
-                    const cat ="shakes"
 
-                    const nArr = items.filter((item)=>{
-                        return item.category==cat
-                    })
-                    setFilteredItems(nArr)
-                }}>Shakes</button>
-            </div>
+            }}>All</button>
+            <button id='filter-btn-1' onClick={() => {
+                const cat = "breakfast"
 
-            <div style={{display:'flex', flexWrap:'wrap'}}>
-              {filteredItems.map((item)=>{
-                return <CompA item = {item}/>
-              })}
-            </div>
+                const nArr = items.filter((item) => {
+                    return item.category == cat
+                })
+
+                setFilteredItems(nArr)
+                // console.log(nArr)
+
+
+            }}>Breakfast</button>
+            <button id='filter-btn-2' onClick={() => {
+                const cat = "lunch"
+
+                const nArr = items.filter((item) => {
+                    return item.category == cat
+                })
+
+                setFilteredItems(nArr)
+                // console.log(nArr)
+
+
+            }}>Lunch</button>
+            <button id='filter-btn-3' onClick={() => {
+                const cat = "shakes"
+
+                const nArr = items.filter((item) => {
+                    return item.category == cat
+                })
+
+                setFilteredItems(nArr)
+                // console.log(nArr)
+
+
+            }}>Shakes</button>
         </div>
-    )
-  }
+
+        <div style={{display:'flex', flexWrap : "wrap"}}>
+            {filteredItems.map((item) => {
+                return <CompA item={item} />
+            })}
+        </div>
+
+    </div>
+  )
+}
+
 export default App
