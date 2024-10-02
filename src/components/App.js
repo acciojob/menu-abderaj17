@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import compA from "./compA";
+import CompA from "./CompA";
 
 const data = [
     {
@@ -111,7 +111,7 @@ const data = [
                 <button id="filter-btn-3" onClick={()=>{
                     const cat ="shakes"
 
-                    const nArr = item.filter((item)=>{
+                    const nArr = items.filter((item)=>{
                         return item.category==cat
                     })
                     setFilteredItems(nArr)
@@ -120,7 +120,7 @@ const data = [
 
             <div style={{display:'flex', flexWrap:'wrap'}}>
               {filteredItems.map((item)=>{
-                return <compA item = {item}/>
+                return <CompA item = {item}/>
               })}
             </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const compA = (item) => {
+export const CompA = (item) => {
     const{title, price, desc, category, img}=item
 
   return (
@@ -17,4 +17,4 @@ export const compA = (item) => {
     </div>
   )
 }
-export default compA;
+export default CompA;
